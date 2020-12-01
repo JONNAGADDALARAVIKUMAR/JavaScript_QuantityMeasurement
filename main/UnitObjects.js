@@ -1,0 +1,8 @@
+class Units {
+    unit = {
+        INCH : 1,
+        FEET : 12,
+        YARD : 36
+    }
+}
+module.exports = Units;
