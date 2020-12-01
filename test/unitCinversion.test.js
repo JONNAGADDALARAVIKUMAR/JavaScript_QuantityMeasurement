@@ -51,4 +51,11 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, null);
         expect(firstValue.compare(secondValue)).resolves.toBeFalsy();
     });
+    test('TestCasePassedIfTheReturnedValueIsFalse_WhenWePassed_NullInch,NullInch', () => {
+        const units1 = new Units();
+        const units2 = new Units();
+        const firstValue = new QuantityConverter(units1.lenthUnits, units1.lenthUnits.INCH, null);
+        const secondValue = new QuantityConverter(units2.lenthUnits, units2.lenthUnits.INCH, null);
+        expect(firstValue.compare(secondValue)).resolves.toBeFalsy();
+    });
 })
