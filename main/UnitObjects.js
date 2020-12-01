@@ -10,5 +10,10 @@ class Units {
         LITRE : 1000,
         GALLON : 3785
     }
+    weightUnits = {
+        GR : 1,
+        KG : 1000,
+        TON : 1000000
+    }
 }
 module.exports = Units;

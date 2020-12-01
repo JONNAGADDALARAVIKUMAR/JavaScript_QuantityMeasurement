@@ -171,4 +171,12 @@ describe('Usecase 5,6', () => {
         const thirdValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 2);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
+});
+describe('UseCase 7', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneKGAnd1000Grams', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.weightUnits, units.weightUnits.KG, 1);
+        const secondValue = new QuantityConverter(units.weightUnits, units.weightUnits.GR, 1000);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
 })
