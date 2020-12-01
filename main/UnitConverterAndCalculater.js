@@ -33,5 +33,13 @@ class QuantityConverter {
             resolve(addedValue == thirdValue);
         })
     }
+    compareTemperature(other) {
+        return new Promise(resolve => {
+            const firstValue = this.convert(this.unit, this.value);
+            const secondValue = other.convert(other.unit, other.value);
+            resolve(((firstValue - 32) * 5/9) == secondValue);
+        })
+    }
+    
 }
 module.exports = QuantityConverter;

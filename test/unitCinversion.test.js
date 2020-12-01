@@ -192,4 +192,12 @@ describe('UseCase 7', () => {
         const thirdValue = new QuantityConverter(units.weightUnits, units.weightUnits.KG, 1001);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
+});
+describe('UseCase 8', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassedTemperature_212FAnd100C', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.temperatureUnits, units.temperatureUnits.F, 212);
+        const secondValue = new QuantityConverter(units.temperatureUnits, units.temperatureUnits.C, 100);
+        expect(firstValue.compareTemperature(secondValue)).resolves.toBeTruthy();
+    });
 })

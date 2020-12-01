@@ -15,5 +15,9 @@ class Units {
         KG : 1000,
         TON : 1000000
     }
+    temperatureUnits = {
+        C : 1,
+        F : 1
+    }
 }
 module.exports = Units;
