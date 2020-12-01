@@ -164,4 +164,11 @@ describe('Usecase 5,6', () => {
         const thirdValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 7.57);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_sumOfOneLitreAnd1000MLWith2Litres', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE,1);
+        const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.ML, 1000);
+        const thirdValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 2);
+        expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
+    });
 })
