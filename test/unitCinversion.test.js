@@ -113,11 +113,18 @@ describe('UseCase 1', () => {
         const thirdValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 4);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
-    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWeCompare_OneFeetAndTeoInchesWith14Inches', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWeCompare_OneFeetAndTwoInchesWith14Inches', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 1);
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 2);
         const thirdValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 14);
+        expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
+    });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWeCompare_OneFeetAndOneFeetWith24Inches', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 1);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 1);
+        const thirdValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 24);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
 })
