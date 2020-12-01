@@ -64,4 +64,10 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 0);
         expect(firstValue.compare(secondValue)).resolves.toBeFalsy();
     });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneInch,AndFeet', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 1);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 1 / 12);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
 })
