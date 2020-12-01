@@ -10,7 +10,12 @@ class QuantityConverter {
         return new Promise(resolve => {
             const firstValue = this.convert(this.unit, this.value);
             const secondValue = other.convert(other.unit, other.value);
-            resolve(firstValue == secondValue);
+            
+            if(this.value == null || other.value == null) {
+                resolve(false)
+            } else {
+                resolve(firstValue == secondValue);
+            }
         })
     }
 }
