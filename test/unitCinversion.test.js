@@ -45,4 +45,10 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 0);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsFalse_WhenWePassed_NullInch,NullInch', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, null);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, null);
+        expect(firstValue.compare(secondValue)).resolves.toBeFalsy();
+    });
 })
