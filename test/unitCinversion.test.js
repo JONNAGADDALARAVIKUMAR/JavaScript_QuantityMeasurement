@@ -76,4 +76,10 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.YARD, 1);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsFalse_WhenWePassed_OneFeetAndOneYard', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 1);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.YARD, 1);
+        expect(firstValue.compare(secondValue)).resolves.toBeFalsy();
+    });
 })
