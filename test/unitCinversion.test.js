@@ -1,5 +1,6 @@
 const QuantityConverter = require('../main/UnitConverterAndCalculater');
 const Units = require('../main/UnitObjects')
+
 describe('UseCase 1', () => {
     test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneFeet,12Inches', () => {
         const units = new Units();
@@ -104,6 +105,14 @@ describe('UseCase 1', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.YARD,1);
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 3);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
+});
+describe('UseCase 3, 4', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneYardAndThreeFeet', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH,2);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.CM, 5);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
     test('TestCasePassedIfTheReturnedValueIsTrue_WhenWeCompare_TwoInchesAnd2InchesWth4Inches', () => {
