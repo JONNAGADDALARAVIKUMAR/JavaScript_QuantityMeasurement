@@ -5,5 +5,10 @@ class Units {
         FEET : 30,
         YARD : 90
     }
+    volumeUnits = {
+        ML : 1,
+        LITRE : 1000,
+        GALLON : 3780
+    }
 }
 module.exports = Units;

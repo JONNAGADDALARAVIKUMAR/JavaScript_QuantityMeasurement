@@ -1,7 +1,7 @@
 const QuantityConverter = require('../main/UnitConverterAndCalculater');
 const Units = require('../main/UnitObjects')
 
-describe('UseCase 1', () => {
+describe('UseCase 1, 2', () => {
     test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneFeet,12Inches', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 1);
@@ -142,5 +142,13 @@ describe('UseCase 3, 4', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.CM, 2.5);
         const thirdValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 3);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
+    });
+});
+describe('Usecase 5,6', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneYardAndThreeFeet', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.GALLON,1);
+        const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 3.78);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
 })
