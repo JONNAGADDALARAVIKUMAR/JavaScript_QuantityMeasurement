@@ -7,7 +7,7 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 12);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
-    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneFeet,OneFeet', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_ZeroFeet,ZeroFeet', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 0);
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 0);
@@ -36,6 +36,13 @@ describe('UseCase 1', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.YARD, 1);
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 36);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
+    
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_ZeroInch,ZeroInch', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 0);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 0);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
 })
