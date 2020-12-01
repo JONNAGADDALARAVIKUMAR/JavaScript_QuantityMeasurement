@@ -94,4 +94,10 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 36);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_36InchesAndOneYard', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 36);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.YARD, 1);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
 })
