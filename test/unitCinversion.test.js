@@ -106,4 +106,10 @@ describe('UseCase 1', () => {
         const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.FEET, 3);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_TwoInchesAnd5CM', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH,2);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.CM, 5);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
 })
