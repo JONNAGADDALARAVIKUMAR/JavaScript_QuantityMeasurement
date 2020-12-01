@@ -16,6 +16,8 @@ class QuantityConverter {
                 resolve(false)
             } else if(this.UnitObj != other.UnitObj) {
                 resolve(false)
+            } else if(this.unit == undefined || other.unit == undefined) {
+                resolve(false)
             } else {
                 resolve(firstValue == secondValue);
             }
