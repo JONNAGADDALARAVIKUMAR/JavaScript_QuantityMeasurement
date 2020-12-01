@@ -179,4 +179,10 @@ describe('UseCase 7', () => {
         const secondValue = new QuantityConverter(units.weightUnits, units.weightUnits.GR, 1000);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneTonAnd1000KG', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.weightUnits, units.weightUnits.TON, 1);
+        const secondValue = new QuantityConverter(units.weightUnits, units.weightUnits.KG, 1000);
+        expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
 })
