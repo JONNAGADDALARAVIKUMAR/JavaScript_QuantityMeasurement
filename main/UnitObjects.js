@@ -8,7 +8,7 @@ class Units {
     volumeUnits = {
         ML : 1,
         LITRE : 1000,
-        GALLON : 3780
+        GALLON : 3785
     }
 }
 module.exports = Units;

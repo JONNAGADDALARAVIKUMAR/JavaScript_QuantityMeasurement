@@ -148,7 +148,7 @@ describe('Usecase 5,6', () => {
     test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneGallonAnd3.78Litres', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.GALLON,1);
-        const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 3.78);
+        const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 3.785);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
     test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneLitreAnd1000ML', () => {
@@ -156,5 +156,12 @@ describe('Usecase 5,6', () => {
         const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE,1);
         const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.ML, 1000);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
+    });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneLitreAnd1000ML', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.GALLON,1);
+        const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 3.785);
+        const thirdValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 7.57);
+        expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
 })
