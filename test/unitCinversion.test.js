@@ -157,7 +157,7 @@ describe('Usecase 5,6', () => {
         const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.ML, 1000);
         expect(firstValue.compare(secondValue)).resolves.toBeTruthy();
     });
-    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneLitreAnd1000ML', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_sumOfOneGallonAnd3.785LitresWith7.57', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.GALLON,1);
         const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 3.785);
