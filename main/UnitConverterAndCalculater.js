@@ -1,3 +1,4 @@
+//const Units = require('./UnitObjects');
 class QuantityConverter {
     constructor(UnitObj, unit, value) {
         this.UnitObj = UnitObj;
@@ -21,6 +22,15 @@ class QuantityConverter {
             } else {
                 resolve(firstValue == secondValue);
             }
+        })
+    }
+    compareByAdding(other1, other2) {
+        return new Promise(resolve => {
+            const thirdValue = this.convert(this.unit, this.value);
+            const firstValue = other1.convert(other1.unit, other1.value);
+            const secondValue = other2.convert(other2.unit, other2.value);
+            const addedValue = firstValue + secondValue;
+            resolve(addedValue == thirdValue);
         })
     }
 }
