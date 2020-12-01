@@ -145,7 +145,7 @@ describe('UseCase 3, 4', () => {
     });
 });
 describe('Usecase 5,6', () => {
-    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneYardAndThreeFeet', () => {
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWePassed_OneGallonAnd3.78Litres', () => {
         const units = new Units();
         const firstValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.GALLON,1);
         const secondValue = new QuantityConverter(units.volumeUnits, units.volumeUnits.LITRE, 3.78);
