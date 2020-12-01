@@ -1,5 +1,6 @@
 class QuantityConverter {
-    constructor(unit, value) {
+    constructor(UnitObj, unit, value) {
+        this.UnitObj = UnitObj;
         this.unit = unit;
         this.value = value;
     }
@@ -12,6 +13,8 @@ class QuantityConverter {
             const secondValue = other.convert(other.unit, other.value);
             
             if(this.value == null || other.value == null) {
+                resolve(false)
+            } else if(this.UnitObj != other.UnitObj) {
                 resolve(false)
             } else {
                 resolve(firstValue == secondValue);

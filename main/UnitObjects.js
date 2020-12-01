@@ -1,5 +1,5 @@
 class Units {
-    unit = {
+    lenthUnits = {
         INCH : 1,
         FEET : 12,
         YARD : 36
