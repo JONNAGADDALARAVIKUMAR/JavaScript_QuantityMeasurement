@@ -127,4 +127,11 @@ describe('UseCase 1', () => {
         const thirdValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 24);
         expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
     });
+    test('TestCasePassedIfTheReturnedValueIsTrue_WhenWeCompare_TwoInchesAnd2.5CMWith3Inches', () => {
+        const units = new Units();
+        const firstValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 2);
+        const secondValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.CM, 2.5);
+        const thirdValue = new QuantityConverter(units.lenthUnits, units.lenthUnits.INCH, 3);
+        expect(thirdValue.compareByAdding(firstValue, secondValue)).resolves.toBeTruthy();
+    });
 })
